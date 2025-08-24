@@ -1,0 +1,51 @@
+/* === Glowing Section Box on Light Theme === */
+.glow-box {
+  background-color: #fff;
+  border: 2px solid #ff9800;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 152, 0, 0.4), 0 0 20px rgba(255, 152, 0, 0.2);
+}
+
+/* === Orange Glow Title === */
+.glow-title {
+  color: #ff9800;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 6px rgba(255, 152, 0, 0.4), 0 0 12px rgba(255, 152, 0, 0.2);
+}
+
+/* === Soft Yellow Glow Text === */
+.glow-text {
+  color: #444;
+  background-color: #fff8dc;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255, 235, 59, 0.4);
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* === Modern Orange Button with Glow === */
+.button-glow {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 152, 0, 0.5), 0 0 25px rgba(255, 152, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.button-glow:hover {
+  background-color: #ffb74d;
+  box-shadow: 0 0 15px rgba(255, 183, 77, 0.6), 0 0 30px rgba(255, 183, 77, 0.3);
+  color: #000;
+}

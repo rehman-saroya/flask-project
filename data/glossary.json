@@ -1,0 +1,15 @@
+[
+    {
+      "term": "Encapsulation",
+      "definition": "Encapsulation is the bundling of data and methods that operate on that data into a single unit, or class. In simple terms, Encapsulation means putting data and the function that use it toghter in one place, like a box."
+    },
+    {
+      "term": "Abstraction",
+      "definition": "Abstraction is the concept of hiding the complex reality while exposing only the necessary parts. In simple terms, Abstraction means showing only the important stuff and hiding the complicated details."
+    },
+    {
+      "term": "Polymorphism",
+      "definition": "Polymorphism allows methods to do different things based on the object it is acting upon, even if they share the same name. Polymorphism means the same function name can do different things depending on the object it's used with."
+    }
+  ]
+  

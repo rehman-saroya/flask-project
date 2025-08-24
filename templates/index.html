@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Software Engineering Fundamentals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body { 
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background-color: #9e75a6;
+      color: #d95c5c;
+      font-size: large;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(#06050e 1px, transparent 1px), linear-gradient(to right, #222 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.1;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    nav {
+      background-color: #12061c;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 0 10px rgb(82, 51, 139), 0 0 20px rgb(103, 103, 156);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: rgb(158, 241, 252);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #0ff;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      color: #8142c1;
+      text-shadow: 0 0 5px #1a77dae0, 0 0 10px rgb(161, 161, 214);
+    }
+
+    .section-container {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .section {
+      background-color: #fcfeff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgb(116, 116, 195), 0 0 20px rgb(129, 129, 193);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: rgb(73, 18, 109);
+      margin-bottom: 1rem;
+      text-shadow: 0 0 5px rgb(102, 200, 250);
+    }
+
+    p, li {
+      color: #000000;
+      text-shadow: 0 0 3px rgb(15, 75, 255);
+      font-size: large;
+    }
+
+    textarea, input, button {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    textarea {
+      width: 100%;
+      background: #6682b3;
+      color: #0ff;
+      border: 1px solid #0ff;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: large;
+    }
+
+    button {
+      background: rgb(22, 21, 21);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgb(196, 108, 82), 0 0 20px rgb(163, 163, 224);
+    }
+
+    button:hover {
+      background: #0ff;
+      color: #000;
+    }
+
+    #ai-response {
+      background: #628eac;
+      color: #0ff;
+      padding: 1rem;
+      border-left: 5px solid rgb(113, 113, 224);
+      border-radius: 5px;
+      margin-top: 1rem;
+      font-size: large;
+    }
+
+    #chat-box {
+      background: #6c98ea;
+      border: 1px solid #0ff;
+      padding: 1rem;
+      height: 300px;
+      overflow-y: scroll;
+      margin-bottom: 1rem;
+      color: #0ff;
+      border-radius: 5px;
+    }
+
+    #username, #message-input {
+      padding: 0.5rem;
+      border: 1px solid #0ff;
+      background: #6992d0;
+      color: #0ff;
+      border-radius: 5px;
+    }
+
+    model-viewer {
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      background: #3f72ac;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgb(119, 119, 247);
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="main-nav" style="display: none;">
+    <a href="#welcome">Welcome</a>
+    <a href="#sdlc">SDLC</a>
+    <a href="#attributes">Attributes</a>
+    <a href="#ask">Ask AI</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#chat">Chat</a>
+    <a href="#model">3D Model</a>
+  </nav>
+
+  <h1>OpenQQuanify Explortion Into Software Engineering</h1>
+
+  <div class="section-container">
+    <div class="glow-box">
+      <h2 class="glow-title"></h2>
+    <section id="welcome" class="section" style="display: block; opacity: 1;">
+      <h2>Welcome</h2>
+      <p>The exploration in software engineering is important as it helps people understand how current technology is fabricated ,sustained and enchanced. </p>
+      <button id="enter-btn">Enter</button>
+    </section>
+
+    <section id="sdlc" class="section">
+      <h2>Software Development Life Cycle (SDLC)</h2>
+      <ul>
+        <li><strong>Planning:</strong> Clarify what needs to be built.</li>
+        <li><strong>Design:</strong> Engineer the system structure.</li>
+        <li><strong>Implementation:</strong> Develop the code.</li>
+        <li><strong>Testing:</strong> Confirm the code works.</li>
+        <li><strong>Deployment:</strong> Deliver the software.</li>
+        <li><strong>Maintenance:</strong> Improve and fix issues over time.</li>
+      </ul>
+
+      
+      
+      
+      
+      
+      <p class = "sdlc-summary">
+      The software development lifecycle is important as it is needed to build 
+      a software application. This development goes through a procedure in which
+      there are several stages. Additionally, developers add features that are 
+      needed while also fixing bugs in the software.  
+
+      The first stage includes the planning phase. The planning phase includes duties like arranging,
+      examining and granting. In this stage. The team of developers receives information from customers,manangers and 
+      experts to create a document that is needed for software demands. This document has expectations
+      that needs to be met through commmon goals that help, when the project is planned.
+
+      The second stage includes the design phase. In the design phase, software engineers try to find the 
+      best solution to create the software. Software engineers need to analyze what is needed in order for 
+      this to be executed. 
+
+      The third stage includes the implementation phase. This is where the product is programmed by a team
+      of developers. Coding tasks are broken down into smaller bits so it can be manageable to accomplish. 
+      The requirements for the coding tasks that are indentified is analyzed daily. 
+
+      The fourth stage includes the deployment phase. This is when software is developed by teams and tests are 
+      done on the different copies of software than the one that the users have access to. Production is the software 
+      that customers use. Other copies are in the build enviroment or the testing enviroment. Build and prod
+      uction enviroments are important as they make sure the customer can use the software even if it is altered by 
+      changes or upgrades within the enviroments. This phase includes many tasks that move the lastest build copy to the 
+      production enviroment. Examples include packaging, installation and environment configuration. 
+      
+      The last phase includes the maintenance phase. This includes the team fixing bugs, helping customers with issues, and 
+      managing software changes. Overall, system performance is monitored and the security performance of the 
+      the user experience. This is all to find out ways to to improve the software. 
+
+      Source: https://aws.amazon.com/what-is/sdlc/
+
+        
+    </p>
+    </section>
+
+    <section id="attributes" class="section">
+      <h2>4 Main Attributes of Software Engineering</h2>
+      <ul>
+        <li><strong>Efficiency: </strong> How efficientley a software product is utlizied within system resources in order to perform at its full functionality.   </li>
+        <li><strong>Reliability: </strong> The software is ensured that it is consistently produced with the efficient results with conditions that are consistent. </li>
+        <li><strong>Reuseability: </strong> The capacity in which a software module is refered to, so it can be used across many different kinds of applications and systems.  </li>
+        <li><strong>Maintainability: </strong> When the software ability is altered to the point where it needs to be fixed or upgraded easily with requirements changing. </li>
+      
+      </ul>
+    
+
+
+    
+      <h2>Careers in Software Engineering</h2>
+         
+          <p>
+          There are many computing job choices to consider when a degree or experience related to software engineering is accomplished and is ready to be utilized. 
+          Most software engineers are given the opportunity to get good paying careers with professional experience resulting in 
+          great progrress. Outcomes or possibilites depend on the individuals region, school and industry. Here are the following job roles in software
+          engineering:
+          </p>
+
+          <h3>Common Job Roles in Software Engineering:</h3>
+          
+          <ul>
+          <li><strong>SDE,Software Development Engineer</strong></li>
+          <li><strong>SWE,Software Engineer</strong></li>
+          <li><strong>Web Developer</strong></li>
+          <li><strong>Web Designer</strong></li>
+          <li><strong>Quality Assurance Engineer</strong></li>
+          <li><strong>Web Desginer</strong></li>
+          <li><strong>Cloud Engineer</strong></li>
+          <li><strong>Front-End Developer</strong></li>
+          <li><strong>Back-End Developer</strong></li>
+          <li><strong>DevOps Engineer</strong></li>
+          <li><strong>Security Engineer</strong></li>
+          </ul>
+
+          <h3>Technical Skills: </h3>
+
+          <ul>
+          <li><strong>Coding and computer programming</strong></li>
+          <li><strong>Software testing</strong></li>
+          <li><strong>Object-oriented design</strong></li>
+          <li><strong>Software development</strong></li>
+          </ul>
+         <h3> Soft Skills:</h3>
+          <ul>
+          <li><strong>Communication skills</strong></li>
+          <li><strong>Team player</strong></li>
+          <li><strong>Problem solving</strong></li>
+          <li><strong>Attention to detail</strong></li>
+          </ul>
+          <h3>Advantages of Software Engineering Include:</h3>
+          <p>Quality that is improved from a software that is established and followed so that it can be developed with a small amount of bugs with more reliablity. 
+          Productivity is also improved creating a enviroment using tools that are modern and methologies that streamline development processes to ensure developers 
+          are more productive and can complete projects faster. Another advantage includes better maintanability which includes the software becoming designed and 
+          developed using software engineering pratices so that it is easy to keep up with and update over a period of time. Software engineering can reduce the cost 
+          of fixing bugs by identifying problems and addressing them in the development process. Adding features later on can also contribute to this. When developing
+          software it is important that it meets the customer needs by ensuring the development process is efficient. Scalability is important to consider specially 
+          when to comes to handling the increasing amount of users and transactions. Efficient Security is important to consider because of the security tests that are performed, 
+          which can help prevent breaches and protect sensitive data. 
+
+          Overall, software engineering provides a structured and efficient path to software development. This can lead to better quality software which allows the software to be
+          easily maintained and adaptive to altering requirements.
+
+          Source:https://www.geeksforgeeks.org/software-engineering/software-engineering-introduction-to-software-engineering/
+        </p>
+      </section>
+      
+
+    <section id="ask" class="section">
+      <h2>Ask a Software Engineering Question</h2>
+      <form id="ask-form">
+        <textarea id="user-input" rows="4" placeholder="Type your question here..." required></textarea><br>
+        <button type="submit">Ask</button>
+        <button type="button" id="clear-cache-btn" style="margin-left: 10px; background-color: #888;">Clear AI Cache</button>
+      </form>
+      <p id="ai-response">AI Response Will Load</p>
+      <p id="cache-status"></p>
+    </section>
+
+    <section id="glossary" class="section">
+      <h2>Glossary</h2>
+      <ul>
+        <li><strong>Agile:</strong> An repetitive approach to software development.</li>
+        <li><strong>API:</strong> A set of steps and tools needed for building software.</li>
+        <li><strong>Bug:</strong> A error or fault in a software program.</li>
+        <li><strong>CI/CD:</strong> Continuous Integration and Continuous Deployment.</li>
+        <li><strong>Refactoring:</strong> Code structure improving without any changed behavior. </li>
+        <li><strong>AI Agent:</strong> A software program that can interact with its environment by collecting data, and using the data to perform self-determined tasks to meet goals.</li>
+        <li><strong>Variables:</strong> A name used to store information that a program can use and change while it runs.</li>
+        <li><strong>Functions:</strong> A set of instructions that performs a specific task when called.</li>
+        <li><strong>Machine Learning:</strong> A field of artificial intelligence that focuses on developing algorithms and models that allow computers to learn.</li>
+        <li><strong>Algorithm:</strong> An algorithm is a series of steps made to perform a computation or to solve a problem.</li>
+        <li><strong>Agile:</strong> Agile is an iterative and increamental approach to software develpoment as it emphasizes flexibility, colloboration, and ongoing improvemnt.</li> 
+        <li><strong>Class:</strong> A class is a blueprint or template for creating objects.</li>
+        <li><strong>Client-Server:</strong> A architecture where the model software applications request and receive services or resources from a centeralized server. </li>
+        <li><strong>Cloud Computing:</strong> This refers to the delivery of computing services online or over the internet. </li>
+        <li><strong>Database:</strong> A structured collection of data that is organized, stored, and accessed electronically</li>
+        <li><strong>Debugging:</strong> The process of finding and fixing errors or defects in software programs.</li>
+        <li><strong>Design Patterns:</strong> Reuseable solutions to common software issues.</li>
+        <li><strong>Encryption:</strong> The process of converting data into an unreadable form to protect it from unauthorized access.</li>
+        <li><strong>Framework:</strong> This is a resuable set of libraries, components, and tools that provide a foundation for building software applications.</li>
+        <li><strong>Git:</strong> A widely used distributed version control that allows many developers to collaborate on the same codebase. </li>
+        <li><strong>IDE:</strong> A IDE is a software application that provides comprehensive tools and features tp facilitate software development</li>
+        <li><strong>interface:</strong> This defines a contract for a class, specifying the method that the class must implement.</li>
+        <li><strong>Library:</strong> A collection of pre-written code that provides specific functionalities that can be reused across many other projects.</li>
+        <li><strong>Platform:</strong> A combination of hardware and software components that provide an environment for developing and executing software applications.</li>
+        <li><strong>Version Control:</strong> The practice of tracking and managing changes to software code or documents over time.</li>
+        <li><strong>Microservices:</strong> A style that structures an application as a collection of services.</li>
+        <li><strong>Scalability:</strong> Refers to the ability of a software system to handle increasing workloads and user demands without the compromising performance.</li>
+        <li><strong>Open Source:</strong> Software whose source code can be modified or viewed by anyone. </li>
+        <li><strong>Virtualization:</strong> Creation of virtual versions of computer sources.</li>
+        <li><strong>Pair Programming:</strong> Involves two programmers working together on the same task. One acting as the driver writing the code and the navigator that reviews each line of the code. </li>
+        <li><strong>Scalability:</strong> The ability of a software system to handle an increase in workloads and user demands without comprising performance</li>
+        <li><strong>Software Testing:</strong> This is the process of verifying tand validiating the software to ensure that it meets the specific requirements and functions.</li>
+        <li><strong>Frontend:</strong> A software that is considered a client type that users can interact with. </li>
+        <li><strong>Operating System:</strong> A software system that a computer supports. </li>
+        <li><strong>Prototype:</strong> A version that is a type of a software. </li>
+        <li><strong>Continous Integration:</strong> A type of software development pratice that already know how to intergrate the code that has changes into a repository that is shared, many times a day.</li>
+        <li><strong>Exeception Handling:</strong> A type of mechanism that includes programming so that it can respond and manage events that are not expected during the exection of a program.</li>
+        <li><strong>Functional Testing:</strong> This type of testing ensures the functions and features of the application that is veritfied, so that it can meet the requirements that are needed.This involves the testing of software.</li>
+        <li><strong>High-Level language:</strong> A programming language that is more friendly to the user making it easy for developers to contruct code. This is because of how low-level machines operate.</li>
+        <li><strong>Integreation Testing:</strong> A software testing skill where the integration and interaction between the different kinds of components of a software system is tested. This test make sure the integrated components are working together.</strong></li>
+        <li><strong>Jenkins:</strong>An open-source server that is automated for the integration that is continous with the delivery of pipelines. This includes CI/CD. This automates the testing,building deployment of the software.</li>
+        <li><strong>Kanban:</strong>A type of methodology that is displaying a workflow of project managment using a board that has cards representing many tasks.</li>
+        <li><strong>Low-Level Language:</strong>A programming language where it is mimicing machine code closely to a specific design. </li>
+       <li><strong>Maintenance:</strong>This envolves the enchancment of software through updating and modifying.</li>
+       <li><strong>Node.js:</strong>This type of enviroment is open-source runtime which allows the developers to be able to run code using JavaScript on the server-side.</li>
+        <li><strong>Object-Oriented Programming:</strong> A type of programming pattern used to organize code into objects. These objects each represent a real-world unit.</li>
+        <li><strong>Quality Assurance:</strong>This systematically observes and analyzes the software quality to make sure the desired requirements and standards are met, in order to prevent defects and give products that are high quality. </li>
+        <li><strong>Refactoring:</strong>This includes the process of reshuffling the code,improving its structure in order to have no changes to its external behavior. </li>
+        <li><strong>Software Development Life Cycle:</strong>This is a structured approach to the development of software that is guided through the beginning to deployment.</li>
+        <li><strong>Test-Driven Development:</strong>Similar to the SDLC, this is a software development apprroach where developers can write the tests that are needed before implementing the actual code, ensuring the code is meeting the expecting functionality. </li>
+        <li><strong>Usability Testing:</strong> This type of testing estimates the friendliness and effectiveness of the software by testing it with users. </li>
+       <li><strong>Waterfall Model:</strong> This is a traditonal type of software development approach similar to the SDLC and test-driven development, where each phase of the SDLC is followed in a linear sequence. This includes planning, which is strict sequence before going onto the next phase.</li>
+
+        
+
+
+
+
+
+      <p>
+        Source:https://www.coursera.org/collections/software-engineering-terms
+      </p>
+ 
+       
+      </ul>
+    </section>
+
+    <section id="chat" class="section">
+      <h2>Live Chat</h2>
+      <div id="chat-box"></div>
+      <input id="username" type="text" placeholder="Your name" />
+      <input id="message-input" type="text" placeholder="Type a message..." />
+      <button id="send-btn">Send</button>
+    </section>
+
+    <section id="model" class="section">
+      <h2>Explore a 3D Computer Model</h2>
+      <model-viewer
+        src="{{ url_for('static', filename='assets/3d/computer_model.glb') }}"
+        alt="3D computer model"
+        auto-rotate
+        camera-controls
+        style="width: 100%; max-width: 600px; height: 400px; background: #f0f0f0; border-radius: 10px;">
+      </model-viewer>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+        Model: <em>Computer</em> by Google on Poly Pizza, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>
+      </p>
+    </section>
+    
+  </div>
+  <script>
+    const askForm = document.getElementById('ask-form');
+    const userInput = document.getElementById('user-input');
+    const aiResponse = document.getElementById('ai-response');
+    const clearCacheBtn = document.getElementById('clear-cache-btn');
+    const cacheStatus = document.getElementById('cache-status');
+  
+    askForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const prompt = userInput.value.trim();
+      if (!prompt) return;
+  
+      aiResponse.textContent = 'AI is thinking...';
+      cacheStatus.textContent = '';
+  
+      try {
+        const response = await fetch('/api/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt }),
+        });
+        const data = await response.json();
+        aiResponse.textContent = data.response || 'No response received.';
+      } catch (err) {
+        aiResponse.textContent = 'Error fetching AI response.';
+        console.error(err);
+      }
+    });
+  
+    clearCacheBtn.addEventListener('click', async () => {
+      cacheStatus.textContent = 'Clearing cache...';
+      try {
+        const response = await fetch('/api/clear_cache', { method: 'POST' });
+        const data = await response.json();
+        cacheStatus.textContent = data.message || 'Cache cleared.';
+      } catch (err) {
+        cacheStatus.textContent = 'Failed to clear cache.';
+        console.error(err);
+      }
+    });
+  
+    const chatBox = document.getElementById('chat-box');
+    const usernameInput = document.getElementById('username');
+    const messageInput = document.getElementById('message-input');
+    const sendBtn = document.getElementById('send-btn');
+  
+    function appendChatMessage(user, message) {
+      const msgDiv = document.createElement('div');
+      msgDiv.textContent = `${user}: ${message}`;
+      chatBox.appendChild(msgDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  
+    sendBtn.addEventListener('click', () => {
+      const user = usernameInput.value.trim() || 'Anonymous';
+      const message = messageInput.value.trim();
+      if (!message) return;
+  
+      appendChatMessage(user, message);
+      messageInput.value = '';
+      messageInput.focus();
+    });
+  
+    messageInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        sendBtn.click();
+        e.preventDefault();
+      }
+    });
+  
+    // === Section Switching Logic ===
+  
+    // Hide all sections except welcome on page load
+    document.querySelectorAll('.section').forEach(sec => {
+      if (sec.id !== 'welcome') sec.style.display = 'none';
+    });
+  
+    // Hide nav initially
+    document.getElementById('main-nav').style.display = 'none';
+  
+    // Show nav and first section after "Enter" button clicked
+    document.getElementById('enter-btn').addEventListener('click', () => {
+      document.getElementById('main-nav').style.display = 'block';
+      document.getElementById('welcome').style.display = 'none';
+      document.getElementById('sdlc').style.display = 'block';
+    });
+  
+    // Navigation click switches between sections
+    document.querySelectorAll('#main-nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+  
+        document.querySelectorAll('.section').forEach(sec => {
+          sec.style.display = 'none';
+        });
+  
+        const target = document.getElementById(targetId);
+        if (target) target.style.display = 'block';
+      });
+    });
+  </script>
+  
+ 
+</body>
+</html>
